@@ -30,4 +30,25 @@ export const measurementReducer = createReducer(initialState, {
       error: action.error,
     };
   },
+  // Add Measurements
+  [types.ADD_MEASUREMENT_REQUEST](state, action) {
+    return {
+      ...state,
+      isFetching: true,
+    };
+  },
+  [types.ADD_MEASUREMENT_SUCCESS](state, action) {
+    return {
+      ...state,
+      isFetching: false,
+      error: null,
+    };
+  },
+  [types.ADD_MEASUREMENT_FAILURE](state, action) {
+    return {
+      ...state,
+      isFetching: false,
+      error: action.error,
+    };
+  },
 });
