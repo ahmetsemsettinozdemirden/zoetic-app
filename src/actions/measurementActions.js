@@ -25,9 +25,10 @@ export function getMeasurementRequest() {
   };
 }
 
-export function getMeasurementSuccess() {
+export function getMeasurementSuccess(measurement) {
   return {
     type: types.GET_MEASUREMENT_SUCCESS,
+    measurement: measurement,
   };
 }
 
@@ -37,7 +38,6 @@ export function getMeasurementFailure(error) {
     error,
   };
 }
-
 
 // Add Measurement
 export function addMeasurement(date) {

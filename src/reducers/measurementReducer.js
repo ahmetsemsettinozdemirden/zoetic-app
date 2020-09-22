@@ -2,7 +2,19 @@ import createReducer from 'app/lib/createReducer';
 import * as types from 'app/actions/types';
 
 const initialState = {
-  measurement: null,
+  measurement: {
+    temperature: {
+      temperature: null
+    },
+    oximeter: {
+      spO2: null,
+      pulseRate: null
+    },
+    bloodPressure: {
+      systolicPressure: null,
+      diastolicPressure: null,
+    },
+  },
   isFetching: false,
   error: null,
 };

@@ -12,7 +12,7 @@ import FloatingButton from 'app/components/FloatingButton'
 
 class OverviewScreen extends Component {
   componentDidMount = () => {
-    // this.props.getMeasurement()
+    this.props.getMeasurement()
   }
 
   onFloatingPressed = e => {
@@ -20,18 +20,23 @@ class OverviewScreen extends Component {
   }
 
   render() {
+    const { measurement } = this.props.measurementReducer;
+    const { temperature } = measurement.temperature;
+    const { spO2, pulseRate } = measurement.oximeter;
+    const { systolicPressure, diastolicPressure } = measurement.bloodPressure;
+
     return (
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.innerContainer}>
             <View style={styles.column}>
-              <TemperatureWidget temperature={94.7} />
+              <TemperatureWidget temperature={temperature} />
               <View style={{height: 16}}></View>
-              <OximeterWidget spO2={96} pulseRate={78}/>
+              <OximeterWidget spO2={spO2} pulseRate={pulseRate}/>
             </View>
             <View style={{width: 16}}></View>
             <View style={styles.column}>
-              <BloodWidget systolicPressure={124} diastolicPressure={70} />
+              <BloodWidget systolicPressure={systolicPressure} diastolicPressure={diastolicPressure} />
             </View>
           </View>
         </ScrollView>
@@ -44,7 +49,7 @@ class OverviewScreen extends Component {
 function mapStateToProps(state) {
   const {measurementReducer} = state;
   return {
-    measurement: measurementReducer,
+    measurementReducer: measurementReducer,
   };
 }
 
