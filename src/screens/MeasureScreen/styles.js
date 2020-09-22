@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     padding: 24,
+  },
+  button: {
+    padding: 24,
   }
 });
 
