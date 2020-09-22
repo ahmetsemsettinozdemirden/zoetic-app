@@ -2,6 +2,7 @@ import React from 'react'
 import {View, Text, ActivityIndicator} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles';
+import { Icon } from 'react-native-elements';
 
 const Button = props => (
   <View style={styles.buttonContainer}>
@@ -19,6 +20,7 @@ const LoadingIndicator = props => (
 
 const TemperatureCard = props => (
   <View style={styles.container}>
+    <Icon name='thermometer-full' color='#3c2865' size={20} containerStyle={{width:36, paddingLeft: 16}} type="font-awesome"/>
     <Text style={styles.title}>Body</Text>
     <View style={styles.contentContainer}>
       {props.temperature

@@ -2,6 +2,7 @@ import React from 'react'
 import {View, Text, ActivityIndicator} from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles';
+import { Icon } from 'react-native-elements';
 
 const Content = props => (
   <View style={styles.dataContainer}>
@@ -38,6 +39,7 @@ const LoadingIndicator = props => (
 
 const BloodCard = props => (
   <View style={styles.container}>
+    <Icon name='tint' color='#3c2865' size={20} containerStyle={{width:32, paddingLeft: 16}} type="font-awesome"/>
     <Text style={styles.title}>Blood</Text>
     <View style={styles.contentContainer}>
       <Content systolicPressure={props.systolicPressure} diastolicPressure={props.diastolicPressure}/>

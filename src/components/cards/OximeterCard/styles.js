@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     color: '#3a3a3a',
     fontSize: 16,
     fontWeight: '600',
-    paddingLeft: 16,
+    paddingLeft: 4,
     width: 80,
   },
   // content
