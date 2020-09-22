@@ -15,10 +15,13 @@ const styles = StyleSheet.create({
     shadowRadius: 2.62,
     elevation: 4,
   },
+  row: {
+    flexDirection: 'row',
+  },
   title: {
     color: '#fafafa',
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: 14,
+    fontWeight: '700',
   },
   // value row
   valueColumn: {

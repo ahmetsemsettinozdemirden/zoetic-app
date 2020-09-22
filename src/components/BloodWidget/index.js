@@ -1,10 +1,14 @@
 import React from 'react'
 import {View, Text} from 'react-native'
 import styles from './styles';
+import { Icon } from 'react-native-elements';
 
 const BloodWidget = props => (
   <View style={styles.container}>
-    <Text style={styles.title}>Blood</Text>
+    <View style={styles.row}>
+      <Icon name='tint' color='#fafafa' size={32} containerStyle={{paddingRight: 8}} type="font-awesome"/>
+      <Text style={styles.title}>Blood</Text>
+    </View>
     <View style={styles.valueColumn}>
       <View style={styles.valueRow}>
         <Text style={styles.systolicPressureText}>{props.systolicPressure ? props.systolicPressure : '-'}</Text>

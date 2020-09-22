@@ -1,11 +1,15 @@
 import React from 'react'
 import {View, Text} from 'react-native'
 import styles from './styles';
+import { Icon } from 'react-native-elements';
 
 const OximeterWidget = props => (
   <View style={styles.container}>
-    <Text style={styles.title}>Oximeter</Text>
-    <View style={{...styles.column, paddingTop: 64}}>
+    <View style={styles.row}>
+      <Icon name='heartbeat' color='#fafafa' size={32} containerStyle={{paddingRight: 8}} type="font-awesome"/>
+      <Text style={styles.title}>Oximeter</Text>
+    </View>
+    <View style={{...styles.column, paddingTop: 32, alignSelf: 'flex-end'}}>
       <View style={styles.column}>
         <Text style={styles.spo2Title}>SpO₂</Text>
         <View style={styles.row}>
