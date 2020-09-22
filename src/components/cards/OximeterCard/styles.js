@@ -4,9 +4,18 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#dadada',
+    backgroundColor: '#eaeaea',
     borderRadius: 12,
     marginBottom: 16,
+    // shadow
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.20,
+    shadowRadius: 1.41,
+    elevation: 2,
   },
   title: {
     color: '#3a3a3a',

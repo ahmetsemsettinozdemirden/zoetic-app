@@ -5,6 +5,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#3c2865',
     padding: 16,
     borderRadius: 12,
+    // shadow
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
   },
   title: {
     color: '#fafafa',

@@ -4,7 +4,7 @@ import styles from './styles';
 
 const FloatingButton = props => (
   <TouchableOpacity style={styles.button} onPress={props.onPress}>
-    <Text>{props.text}</Text>
+    <Text style={styles.text}>{props.text}</Text>
   </TouchableOpacity>
 )
 

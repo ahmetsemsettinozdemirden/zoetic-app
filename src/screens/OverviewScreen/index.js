@@ -53,8 +53,17 @@ const Header = ({props}) => (
       backgroundColor: '#3c2865',
       paddingHorizontal: 20,
       flexDirection: 'column',
+      // shadow
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.23,
+      shadowRadius: 2.62,
+      elevation: 4,
     }}>
-    <Text style={{marginTop: 16, fontSize: 16, color: '#fafafa', fontWeight: '500'}}>September 22, 2020</Text>
+    <Text style={{marginTop: 16, fontSize: 16, color: '#fafafa', fontWeight: '500'}}>{new Intl.DateTimeFormat('en').format()}</Text>
     <Text style={{marginTop: 8, marginBottom: 16, fontSize: 16, color: '#fafafa', fontWeight: '700'}}>How are you feeling today?</Text>
   </View>
 )
