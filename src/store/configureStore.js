@@ -9,7 +9,7 @@ import rootReducers from 'app/reducers'; // where reducers is a object of reduce
 const config = {
   key: 'ZoeticApp',
   storage,
-  blacklist: ['measurementReducer'],
+  blacklist: ['deviceReducer', 'measurementReducer'],
   debug: true, // to get useful logging
 };
 

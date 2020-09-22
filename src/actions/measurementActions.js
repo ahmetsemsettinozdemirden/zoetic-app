@@ -40,7 +40,7 @@ export function getMeasurementFailure(error) {
 }
 
 // Add Measurement
-export function addMeasurement(date) {
+export function addMeasurement() {
   return function(dispatch, getState) {
     dispatch(addMeasurementRequest())
     return axios.post(`${config.apiGateway.URL}/measurement`, {
@@ -50,6 +50,7 @@ export function addMeasurement(date) {
       })
       .then(res => {
         dispatch(addMeasurementSuccess(res.data))
+        dispatch(getMeasurement());
       })
       .catch(error => {
         if(error.message === 'Network Error')

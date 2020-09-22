@@ -24,7 +24,7 @@ const TemperatureCard = props => (
       {props.temperature
       ? <Text style={styles.contentText}>{props.temperature}</Text>
       : <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>}
-      {props.buttonVisible && <Button />}
+      {props.buttonVisible && <Button onPress={props.onPress} />}
       {props.loading && <LoadingIndicator />}
     </View>
   </View>

@@ -1,6 +1,6 @@
 const dev = {
   apiGateway: {
-    URL: "http://localhost:8080"
+    URL: "https://zoetic.ozdemirden.com"
   },
 };
 

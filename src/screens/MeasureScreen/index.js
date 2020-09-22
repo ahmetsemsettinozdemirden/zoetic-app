@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {View} from 'react-native';
 import styles from './styles';
 import { ScrollView } from 'react-native-gesture-handler';
-import * as measurementActions from 'app/actions/measurementActions'
+import * as deviceActions from 'app/actions/deviceActions'
 
 import TemperatureCard from 'app/components/cards/TemperatureCard'
 import BloodCard from 'app/components/cards/BloodCard'
@@ -12,10 +12,17 @@ import PrimaryButton from '../../components/PrimaryButton';
 
 class MeasureScreen extends Component {
   render() {
+    const { thermometer } = this.props.deviceReducer;
+
     return (
       <View style={styles.container}>
         <ScrollView style={styles.scrollView}>
-          <TemperatureCard loading={false} buttonVisible={true} temperature={null} />
+          <TemperatureCard
+            loading={thermometer.loading}
+            buttonVisible={!thermometer.temperature && !thermometer.loading}
+            temperature={thermometer.temperature}
+            onPress={() => this.props.measureTemperature()}
+          />
           <BloodCard loading={true} buttonVisible={false} systolicPressure={null} diastolicPressure={null} />
           <OximeterCard loading={false} buttonVisible={false} spO2={96} pulseRate={78} />
         </ScrollView>
@@ -23,9 +30,7 @@ class MeasureScreen extends Component {
           <PrimaryButton
             text="COMPLETE"
             disabled={false}
-            onPress={() => {
-              this.props.navigation.pop()
-            }}
+            onPress={() => this.props.navigation.pop()}
           />
         </View>
       </View>
@@ -34,15 +39,15 @@ class MeasureScreen extends Component {
 }
 
 function mapStateToProps(state) {
-  const {measurementReducer} = state;
+  const {deviceReducer} = state;
   return {
-    measurement: measurementReducer,
+    deviceReducer: deviceReducer,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getMeasurement: () => dispatch(measurementActions.getMeasurement()),
+    measureTemperature: () => dispatch(deviceActions.measureTemperature()),
   }
 }
 

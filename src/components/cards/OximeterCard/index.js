@@ -34,7 +34,7 @@ const OximeterCard = props => (
     <Text style={styles.title}>SpO2</Text>
     <View style={styles.contentContainer}>
       <Content spO2={props.spO2} pulseRate={props.pulseRate}/>
-      {props.buttonVisible && <Button />}
+      {props.buttonVisible && <Button onPress={props.onPress}/>}
       {props.loading && <LoadingIndicator />}
     </View>
   </View>

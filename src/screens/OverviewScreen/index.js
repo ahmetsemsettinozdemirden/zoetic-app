@@ -22,7 +22,7 @@ class OverviewScreen extends Component {
   render() {
     const { measurement } = this.props.measurementReducer;
     const { temperature } = measurement.temperature;
-    const { spO2, pulseRate } = measurement.oximeter;
+    const { spo2, pulseRate } = measurement.oximeter;
     const { systolicPressure, diastolicPressure } = measurement.bloodPressure;
 
     return (
@@ -30,9 +30,10 @@ class OverviewScreen extends Component {
         <ScrollView>
           <View style={styles.innerContainer}>
             <View style={styles.column}>
+              {/* TODO: Temperature to Thermometer */}
               <TemperatureWidget temperature={temperature} />
               <View style={{height: 16}}></View>
-              <OximeterWidget spO2={spO2} pulseRate={pulseRate}/>
+              <OximeterWidget spO2={spo2} pulseRate={pulseRate}/>
             </View>
             <View style={{width: 16}}></View>
             <View style={styles.column}>

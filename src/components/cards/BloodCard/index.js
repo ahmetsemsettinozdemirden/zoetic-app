@@ -34,7 +34,7 @@ const BloodCard = props => (
     <Text style={styles.title}>Blood</Text>
     <View style={styles.contentContainer}>
       <Content systolicPressure={props.systolicPressure} diastolicPressure={props.diastolicPressure}/>
-      {props.buttonVisible && <Button />}
+      {props.buttonVisible && <Button onPress={props.onPress}/>}
       {props.loading && <LoadingIndicator />}
     </View>
   </View>
