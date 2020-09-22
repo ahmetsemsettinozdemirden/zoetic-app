@@ -30,7 +30,6 @@ class OverviewScreen extends Component {
         <ScrollView>
           <View style={styles.innerContainer}>
             <View style={styles.column}>
-              {/* TODO: Temperature to Thermometer */}
               <TemperatureWidget temperature={temperature} />
               <View style={{height: 16}}></View>
               <OximeterWidget spo2={spo2} pulseRate={pulseRate}/>

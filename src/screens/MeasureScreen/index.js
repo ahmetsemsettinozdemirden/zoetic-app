@@ -41,7 +41,7 @@ class MeasureScreen extends Component {
         <View style={styles.button}>
           <PrimaryButton
             text="COMPLETE"
-            disabled={false}
+            disabled={!thermometer.temperature && !bloodPressure.systolicPressure && !oximeter.spo2}
             onPress={() => this.props.navigation.pop()}
           />
         </View>
