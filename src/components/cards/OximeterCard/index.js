@@ -5,13 +5,24 @@ import styles from './styles';
 
 const Content = props => (
   <View style={styles.dataContainer}>
-    {props.spo2
-    ? <Text style={styles.contentText}>{props.spo2}</Text>
-    : <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>}
-    <Text>/</Text>
-    {props.pulseRate
-    ? <Text style={styles.contentText}>{props.pulseRate}</Text>
-    : <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>}
+    {props.spo2 && props.pulseRate
+      ? <>
+          <Text style={styles.titleText}>SpO₂</Text>
+          <Text style={styles.contentText}>{props.spo2}</Text>
+          <Text style={styles.unitText}>%</Text>
+          <Text style={styles.titleText}>PR</Text>
+          <Text style={styles.contentText}>{props.pulseRate}</Text>
+          <Text style={styles.unitText}>bpm</Text>
+        </>
+      : <>
+          <Text style={{...styles.titleText, ...styles.contentEmptyText}}>SpO₂</Text>
+          <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>
+          <Text style={{...styles.unitText, ...styles.contentEmptyText}}>%</Text>
+          <Text style={{...styles.titleText, ...styles.contentEmptyText}}>PR</Text>
+          <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>
+          <Text style={{...styles.unitText, ...styles.contentEmptyText}}>bpm</Text>
+        </>
+    }
   </View>
 )
 
@@ -31,7 +42,7 @@ const LoadingIndicator = props => (
 
 const OximeterCard = props => (
   <View style={styles.container}>
-    <Text style={styles.title}>SpO2</Text>
+    <Text style={styles.title}>Oxigen</Text>
     <View style={styles.contentContainer}>
       <Content spo2={props.spo2} pulseRate={props.pulseRate}/>
       {props.buttonVisible && <Button onPress={props.onPress}/>}

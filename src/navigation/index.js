@@ -5,6 +5,7 @@ import * as types from './types'
 
 import OverviewScreen from 'app/screens/OverviewScreen'
 import MeasureScreen from 'app/screens/MeasureScreen'
+import { StatusBar } from 'react-native'
 
 const overviewHeaderOptions = {
   headerStyle: {
@@ -25,6 +26,7 @@ class Navigator extends React.Component {
   render() {
     return (
       <NavigationContainer>
+        <StatusBar barStyle="light-content" />
         <Stack.Navigator initialRouteName={types.OverviewScreen} screenOptions={{...overviewHeaderOptions}}>
           <Stack.Screen
             name={types.OverviewScreen}

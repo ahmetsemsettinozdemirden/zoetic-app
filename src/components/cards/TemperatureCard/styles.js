@@ -33,8 +33,13 @@ const styles = StyleSheet.create({
     color: '#3c2865',
     fontSize: 36,
     fontWeight: '600',
-    paddingHorizontal: 24,
     paddingVertical: 36,
+  },
+  unitText: {
+    color: '#3a3a3a',
+    fontSize: 12,
+    fontWeight: '400',
+    marginTop: 20,
   },
   contentEmptyText: {
     color: '#aaa',
@@ -63,6 +68,13 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  // data
+  dataContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end', 
+    alignItems: 'center',
+    paddingRight: 24,
   },
 });
 

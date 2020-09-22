@@ -5,13 +5,20 @@ import styles from './styles';
 
 const Content = props => (
   <View style={styles.dataContainer}>
-    {props.systolicPressure
-    ? <Text style={styles.contentText}>{props.systolicPressure}</Text>
-    : <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>}
-    <Text>/</Text>
-    {props.diastolicPressure
-    ? <Text style={styles.contentText}>{props.diastolicPressure}</Text>
-    : <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>}
+    {props.systolicPressure && props.diastolicPressure
+      ? <>
+          <Text style={styles.contentText}>{props.systolicPressure}</Text>
+          <Text style={styles.slash}>/</Text>
+          <Text style={styles.diastolicText}>{props.diastolicPressure}</Text>
+          <Text style={styles.unitText}>mmHg</Text>
+        </>
+      : <>
+          <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>
+          <Text style={{...styles.slash, ...styles.contentEmptyText}}>/</Text>
+          <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>
+          <Text style={{...styles.unitText, ...styles.contentEmptyText}}>mmHg</Text>
+        </>
+    }
   </View>
 )
 

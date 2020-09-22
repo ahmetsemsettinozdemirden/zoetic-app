@@ -31,10 +31,15 @@ const styles = StyleSheet.create({
   },
   contentText: {
     color: '#3c2865',
-    fontSize: 36,
+    fontSize: 40,
     fontWeight: '600',
-    paddingHorizontal: 24,
     paddingVertical: 36,
+  },
+  unitText: {
+    color: '#3a3a3a',
+    fontSize: 12,
+    fontWeight: '400',
+    marginTop: 20,
   },
   contentEmptyText: {
     color: '#aaa',
@@ -67,7 +72,23 @@ const styles = StyleSheet.create({
   // data
   dataContainer: {
     flexDirection: 'row',
-    alignItems: 'center'
+    justifyContent: 'flex-end', 
+    alignItems: 'center',
+    paddingRight: 24,
+  },
+  slash: {
+    color: '#3c2865',
+    fontSize: 32,
+    fontWeight: '700',
+    lineHeight: 32,
+    paddingHorizontal: 3,
+    paddingVertical: 36,
+  },
+  diastolicText: {
+    color: '#09bdc6',
+    fontSize: 40,
+    fontWeight: '600',
+    paddingVertical: 36,
   },
 });
 
