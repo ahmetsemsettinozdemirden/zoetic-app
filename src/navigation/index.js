@@ -9,11 +9,15 @@ import MeasureScreen from 'app/screens/MeasureScreen'
 const overviewHeaderOptions = {
   headerStyle: {
     backgroundColor: '#3c2865',
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
   },
   headerTintColor: '#fafafa',
   headerTitleStyle: {
     fontWeight: 'bold',
   },
+  headerBackTitleVisible: false,
 }
 
 const Stack = createStackNavigator()
@@ -26,14 +30,14 @@ class Navigator extends React.Component {
             name={types.OverviewScreen}
             component={OverviewScreen}
             options={{
-              title: 'Vitals'
+              title: 'Vitals',
             }}
           />
           <Stack.Screen
             name={types.MeasureScreen}
             component={MeasureScreen}
             options={{
-              title: 'Measure Screen'
+              title: 'Measure Screen',
             }}
           />
         </Stack.Navigator>

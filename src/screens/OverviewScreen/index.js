@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {View, ScrollView} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import styles from './styles';
 import * as navigationTypes from 'app/navigation/types'
 import * as measurementActions from 'app/actions/measurementActions'
@@ -27,6 +27,7 @@ class OverviewScreen extends Component {
 
     return (
       <View style={styles.container}>
+        <Header/>
         <ScrollView>
           <View style={styles.innerContainer}>
             <View style={styles.column}>
@@ -45,6 +46,18 @@ class OverviewScreen extends Component {
     );
   }
 }
+
+const Header = ({props}) => (
+  <View 
+    style={{
+      backgroundColor: '#3c2865',
+      paddingHorizontal: 20,
+      flexDirection: 'column',
+    }}>
+    <Text style={{marginTop: 16, fontSize: 16, color: '#fafafa', fontWeight: '500'}}>September 22, 2020</Text>
+    <Text style={{marginTop: 8, marginBottom: 16, fontSize: 16, color: '#fafafa', fontWeight: '700'}}>How are you feeling today?</Text>
+  </View>
+)
 
 function mapStateToProps(state) {
   const {measurementReducer} = state;
