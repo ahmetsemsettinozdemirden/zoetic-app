@@ -44,7 +44,6 @@ export function measureTemperatureFailure(error) {
   };
 }
 
-
 // Blood Pressure
 export function measureBloodPressure() {
   return function(dispatch, getState) {

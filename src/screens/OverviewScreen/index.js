@@ -4,6 +4,8 @@ import {View, Text, ScrollView} from 'react-native';
 import styles from './styles';
 import * as navigationTypes from 'app/navigation/types'
 import * as measurementActions from 'app/actions/measurementActions'
+import * as utils from 'app/lib/utils'
+import {WeekCalendar} from 'react-native-calendars'
 
 import TemperatureWidget from 'app/components/TemperatureWidget'
 import BloodWidget from 'app/components/BloodWidget'
@@ -20,7 +22,7 @@ class OverviewScreen extends Component {
   }
 
   render() {
-    const { measurement } = this.props.measurementReducer;
+    const { measurement, selectedDate } = this.props.measurementReducer;
     const { temperature } = measurement.temperature;
     const { spo2, pulseRate } = measurement.oximeter;
     const { systolicPressure, diastolicPressure } = measurement.bloodPressure;
@@ -28,6 +30,11 @@ class OverviewScreen extends Component {
     return (
       <View style={styles.container}>
         <Header/>
+        <WeekCalendar
+            firstDay={1}
+            markedDates={{[utils.toIsoDate(selectedDate)]: {selected: true,  selectedColor: '#3c2865'}}}
+            onDayPress={(day) => this.props.selectDate(new Date(day.timestamp))}
+          />
         <ScrollView>
           <View style={styles.innerContainer}>
             <View style={styles.column}>
@@ -78,6 +85,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getMeasurement: () => dispatch(measurementActions.getMeasurement()),
+    selectDate: date => dispatch(measurementActions.selectDate(date)),
   }
 }
 

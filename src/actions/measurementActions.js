@@ -1,6 +1,7 @@
 import * as types from './types'
 import axios from 'axios'
 import config from 'app/config'
+import * as utils from 'app/lib/utils'
 
 // Get Measurement
 export function getMeasurement(date) {
@@ -73,4 +74,15 @@ export function addMeasurementFailure(error) {
     type: types.ADD_MEASUREMENT_FAILURE,
     error,
   };
+}
+
+// Select date
+export function selectDate(date) {
+  return function(dispatch) {
+    dispatch({
+      type: types.SELECT_DATE,
+      date: date
+    });
+    dispatch(getMeasurement(utils.toIsoDate(date)));
+  }
 }

@@ -2,6 +2,7 @@ import createReducer from 'app/lib/createReducer';
 import * as types from 'app/actions/types';
 
 const initialState = {
+  selectedDate: new Date(),
   measurement: {
     temperature: {
       temperature: null
@@ -61,6 +62,13 @@ export const measurementReducer = createReducer(initialState, {
       ...state,
       isFetching: false,
       error: action.error,
+    };
+  },
+  // Select Date
+  [types.SELECT_DATE](state, action) {
+    return {
+      ...state,
+      selectedDate: action.date,
     };
   },
 });
