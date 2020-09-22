@@ -7,7 +7,7 @@ const initialState = {
       temperature: null
     },
     oximeter: {
-      spO2: null,
+      spo2: null,
       pulseRate: null
     },
     bloodPressure: {

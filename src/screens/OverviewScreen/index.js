@@ -33,7 +33,7 @@ class OverviewScreen extends Component {
               {/* TODO: Temperature to Thermometer */}
               <TemperatureWidget temperature={temperature} />
               <View style={{height: 16}}></View>
-              <OximeterWidget spO2={spo2} pulseRate={pulseRate}/>
+              <OximeterWidget spo2={spo2} pulseRate={pulseRate}/>
             </View>
             <View style={{width: 16}}></View>
             <View style={styles.column}>

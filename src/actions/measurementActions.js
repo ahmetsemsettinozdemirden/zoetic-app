@@ -40,14 +40,10 @@ export function getMeasurementFailure(error) {
 }
 
 // Add Measurement
-export function addMeasurement() {
+export function addMeasurement(requestBody) {
   return function(dispatch, getState) {
     dispatch(addMeasurementRequest())
-    return axios.post(`${config.apiGateway.URL}/measurement`, {
-        temperature: temperature,
-        bloodPressure: bloodPressure,
-        oximeter: oximeter,
-      })
+    return axios.post(`${config.apiGateway.URL}/measurement`, requestBody)
       .then(res => {
         dispatch(addMeasurementSuccess(res.data))
         dispatch(getMeasurement());

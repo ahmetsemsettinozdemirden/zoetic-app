@@ -5,8 +5,8 @@ import styles from './styles';
 
 const Content = props => (
   <View style={styles.dataContainer}>
-    {props.spO2
-    ? <Text style={styles.contentText}>{props.spO2}</Text>
+    {props.spo2
+    ? <Text style={styles.contentText}>{props.spo2}</Text>
     : <Text style={{...styles.contentText, ...styles.contentEmptyText}}>0</Text>}
     <Text>/</Text>
     {props.pulseRate
@@ -33,7 +33,7 @@ const OximeterCard = props => (
   <View style={styles.container}>
     <Text style={styles.title}>SpO2</Text>
     <View style={styles.contentContainer}>
-      <Content spO2={props.spO2} pulseRate={props.pulseRate}/>
+      <Content spo2={props.spo2} pulseRate={props.pulseRate}/>
       {props.buttonVisible && <Button onPress={props.onPress}/>}
       {props.loading && <LoadingIndicator />}
     </View>

@@ -7,9 +7,9 @@ const OximeterWidget = props => (
     <Text style={styles.title}>Oximeter</Text>
     <View style={{...styles.column, paddingTop: 64}}>
       <View style={styles.column}>
-        <Text style={styles.spO2Title}>SpO₂</Text>
+        <Text style={styles.spo2Title}>SpO₂</Text>
         <View style={styles.row}>
-          <Text style={styles.spO2Value}>{props.spO2 ? props.spO2 : '-'}</Text>
+          <Text style={styles.spo2Value}>{props.spo2 ? props.spo2 : '-'}</Text>
           <Text style={styles.percentage}>%</Text>
         </View>
       </View>

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
   },
-  spO2Title: {
+  spo2Title: {
     color: '#fafafa',
     fontSize: 16,
     fontWeight: '600',
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     paddingBottom: 4,
   },
-  spO2Value: {
+  spo2Value: {
     color: '#fafafa',
     fontSize: 54,
     fontWeight: '700',

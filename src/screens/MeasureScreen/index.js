@@ -12,7 +12,7 @@ import PrimaryButton from '../../components/PrimaryButton';
 
 class MeasureScreen extends Component {
   render() {
-    const { thermometer } = this.props.deviceReducer;
+    const { thermometer, bloodPressure, oximeter } = this.props.deviceReducer;
 
     return (
       <View style={styles.container}>
@@ -23,8 +23,20 @@ class MeasureScreen extends Component {
             temperature={thermometer.temperature}
             onPress={() => this.props.measureTemperature()}
           />
-          <BloodCard loading={true} buttonVisible={false} systolicPressure={null} diastolicPressure={null} />
-          <OximeterCard loading={false} buttonVisible={false} spO2={96} pulseRate={78} />
+          <BloodCard
+            loading={bloodPressure.loading}
+            buttonVisible={!bloodPressure.systolicPressure && !bloodPressure.diastolicPressure && !bloodPressure.loading}
+            systolicPressure={bloodPressure.systolicPressure}
+            diastolicPressure={bloodPressure.diastolicPressure}
+            onPress={() => this.props.measureBloodPressure()}
+          />
+          <OximeterCard
+            loading={oximeter.loading}
+            buttonVisible={!oximeter.spo2 && !oximeter.pulseRate && !oximeter.loading}
+            spo2={oximeter.spo2}
+            pulseRate={oximeter.pulseRate}
+            onPress={() => this.props.measureOximeter()}
+          />
         </ScrollView>
         <View style={styles.button}>
           <PrimaryButton
@@ -48,6 +60,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     measureTemperature: () => dispatch(deviceActions.measureTemperature()),
+    measureBloodPressure: () => dispatch(deviceActions.measureBloodPressure()),
+    measureOximeter: () => dispatch(deviceActions.measureOximeter()),
   }
 }
 
