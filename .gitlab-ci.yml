@@ -19,5 +19,5 @@ detox_e2e:
     - echo no | $ANDROID_HOME/tools/bin/avdmanager --verbose create avd --force --name "Nexus6P" --package "system-images;android-27;default;x86_64" --sdcard 200M --device 11
     - adb start-server
   script:
-    - npx detox build -c android.emu.release
-    - npx detox test -c android.emu.release --headless
+    - npx detox build -c android.emu.ci
+    - npx detox test -c android.emu.ci --headless
