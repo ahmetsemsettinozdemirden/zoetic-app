@@ -26,7 +26,7 @@ class Navigator extends React.Component {
   render() {
     return (
       <NavigationContainer>
-        <StatusBar barStyle="light-content" />
+        <StatusBar barStyle="light-content" backgroundColor="#3c2865"/>
         <Stack.Navigator initialRouteName={types.OverviewScreen} screenOptions={{...overviewHeaderOptions}}>
           <Stack.Screen
             name={types.OverviewScreen}

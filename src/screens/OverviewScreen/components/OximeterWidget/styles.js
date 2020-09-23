@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     color: '#fafafa',
     fontSize: 16,
     fontWeight: '600',
+    lineHeight: 16,
     paddingBottom: 4,
   },
   prTitle: {
