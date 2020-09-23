@@ -1,6 +1,11 @@
 # Zoetic Assignment
 This application is developed by Ahmet Semsettin Ozdemirden. React Native, Redux, Redux Thunk, Redux Logger, Redux Persist, React Navigation, React Native Calendars, React Native Vector Icons, Axios and Detox is used.
 
+<img src="screenshots/android1.png" height="320" style="float: left; margin-right: 10px;"/>
+<img src="screenshots/android2.png" height="320" style="float: left; margin-right: 10px;"/>
+<img src="screenshots/ios1.png" height="320" style="float: left; margin-right: 10px;"/>
+<img src="screenshots/ios2.png" height="320" style="float: left; margin-right: 10px;"/>
+
 ## Folder Structure
 ```
 |-- android
