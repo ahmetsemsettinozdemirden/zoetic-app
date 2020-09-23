@@ -43,11 +43,12 @@ export function getMeasurementFailure(error) {
 // Add Measurement
 export function addMeasurement(requestBody) {
   return function(dispatch, getState) {
+    const {measurementReducer} = getState();
     dispatch(addMeasurementRequest())
     return axios.post(`${config.apiGateway.URL}/measurement`, requestBody)
       .then(res => {
         dispatch(addMeasurementSuccess(res.data))
-        dispatch(getMeasurement());
+        dispatch(getMeasurement(utils.toIsoDate(measurementReducer.selectedDate)));
       })
       .catch(error => {
         if(error.message === 'Network Error')
@@ -83,6 +84,6 @@ export function selectDate(date) {
       type: types.SELECT_DATE,
       date: date
     });
-    dispatch(getMeasurement(utils.toIsoDate(date)));
+    return dispatch(getMeasurement(utils.toIsoDate(date)));
   }
 }

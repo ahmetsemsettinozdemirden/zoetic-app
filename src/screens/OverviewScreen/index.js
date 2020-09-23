@@ -6,6 +6,8 @@ import * as navigationTypes from 'app/navigation/types'
 import * as measurementActions from 'app/actions/measurementActions'
 import * as utils from 'app/lib/utils'
 import {WeekCalendar} from 'react-native-calendars'
+import 'intl';
+import 'intl/locale-data/jsonp/en'; // or any other locale you need
 
 import TemperatureWidget from 'app/components/TemperatureWidget'
 import BloodWidget from 'app/components/BloodWidget'
@@ -30,6 +32,9 @@ class OverviewScreen extends Component {
     return (
       <View style={styles.container}>
         <Header/>
+        <Text testID="stepOne">
+          Step One
+        </Text>
         <WeekCalendar
             firstDay={1}
             markedDates={{[utils.toIsoDate(selectedDate)]: {selected: true,  selectedColor: '#3c2865'}}}
