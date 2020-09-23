@@ -1,8 +1,13 @@
+after_script:
+  - (if [ "$(lsof -n -i4TCP:2137)" != "" ]; then kill -9 $(lsof -n -i4TCP:2137); else echo "Cleaned"; exit 33; fi);
+
 detox_e2e:
   stage: test
   image: reactnativecommunity/react-native-android
   variables:
   before_script:
+    - npm install -g react-native-cli
+    - npm install
     - npm i -g envinfo detox-cli && envinfo
     # Increase file watcher limit, see more here: https://github.com/guard/listen/wiki/Increasing-the-amount-of-inotify-watchers#the-technical-details
     - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p

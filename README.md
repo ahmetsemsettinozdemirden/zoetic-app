@@ -1,8 +1,33 @@
 # Zoetic Assignment
-This application is developer by Ahmet Semsettin Ozdemirden.
+This application is developed by Ahmet Semsettin Ozdemirden. 
 
-# React Native
+# Folder Structure
+|-- android
+|-- e2e
+|-- ios
+`-- src
+    |-- actions
+    |-- components
+    |   `-- PrimaryButton
+    |-- lib
+    |-- navigation
+    |-- reducers
+    |-- screens
+    |   |-- MeasureScreen
+    |   |   `-- components
+    |   |       |-- BloodCard
+    |   |       |-- OximeterCard
+    |   |       `-- TemperatureCard
+    |   `-- OverviewScreen
+    |       `-- components
+    |           |-- BloodWidget
+    |           |-- FloatingButton
+    |           |-- OximeterWidget
+    |           `-- TemperatureWidget
+    `-- store
 
+# Server
+https://zoetic.ozdemirden.com/
 
 # Automated e2e Tests Detox
 [Detox](https://github.com/wix/Detox) is Gray box end-to-end testing and automation library for mobile apps. Tests are included in `e2e` folder. Both IOS and Android environments are ready for testing.
