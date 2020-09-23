@@ -6,7 +6,7 @@ import { Icon } from 'react-native-elements';
 
 const Button = props => (
   <View style={styles.buttonContainer}>
-    <TouchableOpacity onPress={props.onPress}>
+    <TouchableOpacity onPress={props.onPress} testID="TemperatureCardButton">
       <Text style={styles.buttonText}>Wear <Text style={{fontWeight: '600'}}>Thermometer</Text> to view Temperature.</Text>
     </TouchableOpacity>
   </View>
@@ -19,12 +19,12 @@ const LoadingIndicator = props => (
 )
 
 const TemperatureCard = props => (
-  <View style={styles.container}>
+  <View style={styles.container} testID="TemperatureCard">
     <Icon name='thermometer-full' color='#3c2865' size={20} containerStyle={{width:36, paddingLeft: 16}} type="font-awesome"/>
     <Text style={styles.title}>Body</Text>
     <View style={styles.contentContainer}>
       {props.temperature
-      ? <View style={styles.dataContainer}>
+      ? <View style={styles.dataContainer} testID="TemperatureData">
           <Text style={styles.contentText}>{props.temperature}</Text>
           <Text style={styles.unitText}>°F</Text>
         </View>

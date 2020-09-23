@@ -42,7 +42,7 @@ const LoadingIndicator = props => (
 )
 
 const OximeterCard = props => (
-  <View style={styles.container}>
+  <View style={styles.container} testID="OximeterCard">
     <Icon name='heartbeat' color='#3c2865' size={18} containerStyle={{width:36, paddingLeft: 16}} type="font-awesome"/>
     <Text style={styles.title}>Oxigen</Text>
     <View style={styles.contentContainer}>

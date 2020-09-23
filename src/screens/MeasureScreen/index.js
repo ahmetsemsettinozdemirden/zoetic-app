@@ -5,9 +5,9 @@ import styles from './styles';
 import { ScrollView } from 'react-native-gesture-handler';
 import * as deviceActions from 'app/actions/deviceActions'
 
-import TemperatureCard from 'app/components/cards/TemperatureCard'
-import BloodCard from 'app/components/cards/BloodCard'
-import OximeterCard from 'app/components/cards/OximeterCard'
+import TemperatureCard from './components/TemperatureCard'
+import BloodCard from './components/BloodCard'
+import OximeterCard from './components/OximeterCard'
 import PrimaryButton from '../../components/PrimaryButton';
 
 class MeasureScreen extends Component {

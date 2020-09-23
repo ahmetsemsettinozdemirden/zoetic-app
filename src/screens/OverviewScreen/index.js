@@ -9,10 +9,10 @@ import {WeekCalendar} from 'react-native-calendars'
 import 'intl';
 import 'intl/locale-data/jsonp/en'; // or any other locale you need
 
-import TemperatureWidget from 'app/components/TemperatureWidget'
-import BloodWidget from 'app/components/BloodWidget'
-import OximeterWidget from 'app/components/OximeterWidget'
-import FloatingButton from 'app/components/FloatingButton'
+import TemperatureWidget from './components/TemperatureWidget'
+import BloodWidget from './components/BloodWidget'
+import OximeterWidget from './components/OximeterWidget'
+import FloatingButton from './components/FloatingButton'
 
 class OverviewScreen extends Component {
   componentDidMount = () => {
@@ -32,9 +32,6 @@ class OverviewScreen extends Component {
     return (
       <View style={styles.container}>
         <Header/>
-        <Text testID="stepOne">
-          Step One
-        </Text>
         <WeekCalendar
             firstDay={1}
             markedDates={{[utils.toIsoDate(selectedDate)]: {selected: true,  selectedColor: '#3c2865'}}}
@@ -43,17 +40,17 @@ class OverviewScreen extends Component {
         <ScrollView>
           <View style={styles.innerContainer}>
             <View style={styles.column}>
-              <TemperatureWidget temperature={temperature} />
+              <TemperatureWidget temperature={temperature}/>
               <View style={{height: 16}}></View>
               <OximeterWidget spo2={spo2} pulseRate={pulseRate}/>
             </View>
             <View style={{width: 16}}></View>
             <View style={styles.column}>
-              <BloodWidget systolicPressure={systolicPressure} diastolicPressure={diastolicPressure} />
+              <BloodWidget systolicPressure={systolicPressure} diastolicPressure={diastolicPressure}/>
             </View>
           </View>
         </ScrollView>
-        <FloatingButton text="Measure Now" onPress={this.onFloatingPressed}/>
+        <FloatingButton text="Measure Now" onPress={this.onFloatingPressed} testID="MeasureNowButton"/>
       </View>
     );
   }

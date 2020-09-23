@@ -38,7 +38,7 @@ const LoadingIndicator = props => (
 )
 
 const BloodCard = props => (
-  <View style={styles.container}>
+  <View style={styles.container} testID="BloodCard">
     <Icon name='tint' color='#3c2865' size={20} containerStyle={{width:32, paddingLeft: 16}} type="font-awesome"/>
     <Text style={styles.title}>Blood</Text>
     <View style={styles.contentContainer}>
